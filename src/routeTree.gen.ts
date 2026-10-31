@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as DesignServicesRouteImport } from './routes/design-services'
+import { Route as HomeInspectionRouteImport } from './routes/home-inspection'
+import { Route as SnaggingInspectionRouteImport } from './routes/snagging-inspection'
+import { Route as StructuralInspectionRouteImport } from './routes/structural-inspection'
+import { Route as WaterproofingInspectionRouteImport } from './routes/waterproofing-inspection'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignServicesRoute = DesignServicesRouteImport.update({
+  id: '/design-services',
+  path: '/design-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeInspectionRoute = HomeInspectionRouteImport.update({
+  id: '/home-inspection',
+  path: '/home-inspection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SnaggingInspectionRoute = SnaggingInspectionRouteImport.update({
+  id: '/snagging-inspection',
+  path: '/snagging-inspection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StructuralInspectionRoute = StructuralInspectionRouteImport.update({
+  id: '/structural-inspection',
+  path: '/structural-inspection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WaterproofingInspectionRoute = WaterproofingInspectionRouteImport.update({
+  id: '/waterproofing-inspection',
+  path: '/waterproofing-inspection',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/design-services': typeof DesignServicesRoute
+  '/home-inspection': typeof HomeInspectionRoute
+  '/snagging-inspection': typeof SnaggingInspectionRoute
+  '/structural-inspection': typeof StructuralInspectionRoute
+  '/waterproofing-inspection': typeof WaterproofingInspectionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/design-services': typeof DesignServicesRoute
+  '/home-inspection': typeof HomeInspectionRoute
+  '/snagging-inspection': typeof SnaggingInspectionRoute
+  '/structural-inspection': typeof StructuralInspectionRoute
+  '/waterproofing-inspection': typeof WaterproofingInspectionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/design-services': typeof DesignServicesRoute
+  '/home-inspection': typeof HomeInspectionRoute
+  '/snagging-inspection': typeof SnaggingInspectionRoute
+  '/structural-inspection': typeof StructuralInspectionRoute
+  '/waterproofing-inspection': typeof WaterproofingInspectionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/design-services'
+    | '/home-inspection'
+    | '/snagging-inspection'
+    | '/structural-inspection'
+    | '/waterproofing-inspection'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/design-services'
+    | '/home-inspection'
+    | '/snagging-inspection'
+    | '/structural-inspection'
+    | '/waterproofing-inspection'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/design-services'
+    | '/home-inspection'
+    | '/snagging-inspection'
+    | '/structural-inspection'
+    | '/waterproofing-inspection'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  DesignServicesRoute: typeof DesignServicesRoute
+  HomeInspectionRoute: typeof HomeInspectionRoute
+  SnaggingInspectionRoute: typeof SnaggingInspectionRoute
+  StructuralInspectionRoute: typeof StructuralInspectionRoute
+  WaterproofingInspectionRoute: typeof WaterproofingInspectionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-services': {
+      id: '/design-services'
+      path: '/design-services'
+      fullPath: '/design-services'
+      preLoaderRoute: typeof DesignServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-inspection': {
+      id: '/home-inspection'
+      path: '/home-inspection'
+      fullPath: '/home-inspection'
+      preLoaderRoute: typeof HomeInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/snagging-inspection': {
+      id: '/snagging-inspection'
+      path: '/snagging-inspection'
+      fullPath: '/snagging-inspection'
+      preLoaderRoute: typeof SnaggingInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/structural-inspection': {
+      id: '/structural-inspection'
+      path: '/structural-inspection'
+      fullPath: '/structural-inspection'
+      preLoaderRoute: typeof StructuralInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/waterproofing-inspection': {
+      id: '/waterproofing-inspection'
+      path: '/waterproofing-inspection'
+      fullPath: '/waterproofing-inspection'
+      preLoaderRoute: typeof WaterproofingInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  DesignServicesRoute: DesignServicesRoute,
+  HomeInspectionRoute: HomeInspectionRoute,
+  SnaggingInspectionRoute: SnaggingInspectionRoute,
+  StructuralInspectionRoute: StructuralInspectionRoute,
+  WaterproofingInspectionRoute: WaterproofingInspectionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
