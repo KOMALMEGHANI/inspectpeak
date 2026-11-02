@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { faqs } from "@/lib/faqs";
 import { ServiceDetail } from "@/components/ServiceDetail";
 import { getService } from "@/lib/services-data";
 
