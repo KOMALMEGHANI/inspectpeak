@@ -6,8 +6,13 @@
 
 /*
  * INSPECTPEAK design system.
- * Engineering-grade palette: warm white, charcoal, dark navy + amber accent.
- * Fonts: Archivo (display), Manrope (body), IBM Plex Mono (technical labels).
+ * Palette derived from the client's IP logo: charcoal #151E25, brand red
+ * #C50502, silver grey and white. Fonts: Archivo (display), Manrope (body),
+ * IBM Plex Mono (technical labels).
+ *
+ * Token naming note: `navy` tokens hold the logo's charcoal, `amber` tokens
+ * hold the logo's brand red — the names are kept stable so existing classes
+ * (bg-navy, text-amber, ...) continue to resolve.
  */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -49,30 +54,33 @@
 :root {
   --radius: 0.5rem;
   --background: oklch(0.992 0.003 95);
-  --foreground: oklch(0.24 0.028 265);
+  --foreground: oklch(0.24 0.012 250);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.028 265);
+  --card-foreground: oklch(0.24 0.012 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.028 265);
-  --primary: oklch(0.26 0.055 265);
+  --popover-foreground: oklch(0.24 0.012 250);
+  --primary: oklch(0.24 0.014 250);
   --primary-foreground: oklch(0.985 0.003 95);
   --secondary: oklch(0.955 0.006 250);
-  --secondary-foreground: oklch(0.26 0.055 265);
+  --secondary-foreground: oklch(0.24 0.014 250);
   --muted: oklch(0.962 0.005 95);
-  --muted-foreground: oklch(0.5 0.02 262);
-  --accent: oklch(0.78 0.145 72);
-  --accent-foreground: oklch(0.22 0.05 265);
+  --muted-foreground: oklch(0.5 0.015 250);
+  --accent: oklch(0.52 0.19 29);
+  --accent-foreground: oklch(0.985 0.003 95);
   --destructive: oklch(0.577 0.215 27.325);
   --destructive-foreground: oklch(0.985 0.003 95);
   --border: oklch(0.912 0.008 255);
   --input: oklch(0.912 0.008 255);
-  --ring: oklch(0.78 0.145 72);
-  --brand-navy: oklch(0.25 0.055 265);
-  --brand-navy-deep: oklch(0.185 0.05 266);
-  --brand-navy-soft: oklch(0.94 0.014 258);
-  --brand-charcoal: oklch(0.3 0.02 260);
-  --brand-amber: oklch(0.78 0.145 72);
-  --brand-amber-soft: oklch(0.94 0.05 80);
+  --ring: oklch(0.52 0.19 29);
+  /* Logo charcoal */
+  --brand-navy: oklch(0.24 0.014 250);
+  --brand-navy-deep: oklch(0.16 0.012 250);
+  --brand-navy-soft: oklch(0.94 0.008 250);
+  /* Silver grey from the logo mark */
+  --brand-charcoal: oklch(0.45 0.02 250);
+  /* Logo brand red (#C50502) */
+  --brand-amber: oklch(0.52 0.19 29);
+  --brand-amber-soft: oklch(0.945 0.035 29);
 }
 
 @layer base {
@@ -171,12 +179,12 @@
 
 @utility blueprint-grid-light {
   background-image:
-    linear-gradient(to right, oklch(0.25 0.055 265 / 4%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.25 0.055 265 / 4%) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.24 0.014 250 / 4%) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.24 0.014 250 / 4%) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
-/* Thin amber top rule used on cards */
+/* Thin brand-red top rule used on cards */
 @utility card-top-rule {
   border-top: 2px solid var(--brand-amber);
 }

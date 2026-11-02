@@ -110,12 +110,12 @@ const whyChoose = [
 
 const mockSeverity = [
   { label: "High", count: 2, class: "bg-destructive/15 text-destructive" },
-  { label: "Moderate", count: 5, class: "bg-amber/25 text-accent-foreground" },
+  { label: "Moderate", count: 5, class: "bg-amber-soft text-foreground" },
   { label: "Minor", count: 9, class: "bg-navy-soft text-primary" },
 ] as const;
 
 function HomePage() {
-  const design = designServices[0];
+  const design = designServices[0]!;
 
   return (
     <>
