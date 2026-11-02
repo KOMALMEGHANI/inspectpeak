@@ -11,8 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesignServicesRouteImport } from './routes/design-services'
 import { Route as HomeInspectionRouteImport } from './routes/home-inspection'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as SampleReportRouteImport } from './routes/sample-report'
 import { Route as SnaggingInspectionRouteImport } from './routes/snagging-inspection'
 import { Route as StructuralInspectionRouteImport } from './routes/structural-inspection'
 import { Route as WaterproofingInspectionRouteImport } from './routes/waterproofing-inspection'
@@ -27,6 +30,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DesignServicesRoute = DesignServicesRouteImport.update({
   id: '/design-services',
   path: '/design-services',
@@ -35,6 +43,16 @@ const DesignServicesRoute = DesignServicesRouteImport.update({
 const HomeInspectionRoute = HomeInspectionRouteImport.update({
   id: '/home-inspection',
   path: '/home-inspection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SampleReportRoute = SampleReportRouteImport.update({
+  id: '/sample-report',
+  path: '/sample-report',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SnaggingInspectionRoute = SnaggingInspectionRouteImport.update({
@@ -56,8 +74,11 @@ const WaterproofingInspectionRoute = WaterproofingInspectionRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/design-services': typeof DesignServicesRoute
   '/home-inspection': typeof HomeInspectionRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sample-report': typeof SampleReportRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
   '/waterproofing-inspection': typeof WaterproofingInspectionRoute
@@ -65,8 +86,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/design-services': typeof DesignServicesRoute
   '/home-inspection': typeof HomeInspectionRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sample-report': typeof SampleReportRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
   '/waterproofing-inspection': typeof WaterproofingInspectionRoute
@@ -75,8 +99,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/design-services': typeof DesignServicesRoute
   '/home-inspection': typeof HomeInspectionRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/sample-report': typeof SampleReportRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
   '/waterproofing-inspection': typeof WaterproofingInspectionRoute
@@ -86,8 +113,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/contact'
     | '/design-services'
     | '/home-inspection'
+    | '/privacy-policy'
+    | '/sample-report'
     | '/snagging-inspection'
     | '/structural-inspection'
     | '/waterproofing-inspection'
@@ -95,8 +125,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/contact'
     | '/design-services'
     | '/home-inspection'
+    | '/privacy-policy'
+    | '/sample-report'
     | '/snagging-inspection'
     | '/structural-inspection'
     | '/waterproofing-inspection'
@@ -104,8 +137,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/contact'
     | '/design-services'
     | '/home-inspection'
+    | '/privacy-policy'
+    | '/sample-report'
     | '/snagging-inspection'
     | '/structural-inspection'
     | '/waterproofing-inspection'
@@ -114,8 +150,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   DesignServicesRoute: typeof DesignServicesRoute
   HomeInspectionRoute: typeof HomeInspectionRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SampleReportRoute: typeof SampleReportRoute
   SnaggingInspectionRoute: typeof SnaggingInspectionRoute
   StructuralInspectionRoute: typeof StructuralInspectionRoute
   WaterproofingInspectionRoute: typeof WaterproofingInspectionRoute
@@ -137,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/design-services': {
       id: '/design-services'
       path: '/design-services'
@@ -149,6 +195,20 @@ declare module '@tanstack/react-router' {
       path: '/home-inspection'
       fullPath: '/home-inspection'
       preLoaderRoute: typeof HomeInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sample-report': {
+      id: '/sample-report'
+      path: '/sample-report'
+      fullPath: '/sample-report'
+      preLoaderRoute: typeof SampleReportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/snagging-inspection': {
@@ -178,8 +238,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   DesignServicesRoute: DesignServicesRoute,
   HomeInspectionRoute: HomeInspectionRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SampleReportRoute: SampleReportRoute,
   SnaggingInspectionRoute: SnaggingInspectionRoute,
   StructuralInspectionRoute: StructuralInspectionRoute,
   WaterproofingInspectionRoute: WaterproofingInspectionRoute,
