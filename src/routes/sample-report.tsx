@@ -5,7 +5,7 @@ import {
   FileCheck2,
   MapPin,
   ShieldCheck,
-  Warning,
+  AlertTriangle,
 } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
