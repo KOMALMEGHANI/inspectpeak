@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Sample Report", to: "/sample-report" },
+  { label: "Projects", to: "/projects" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
 
@@ -114,12 +114,20 @@ export function Header() {
                     {s.name}
                   </Link>
                 ))}
+                <div className="my-1.5 border-t" />
+                <Link
+                  to="/sample-report"
+                  className="flex items-center gap-2 px-4 py-2.5 text-sm text-foreground/85 transition-colors hover:bg-muted hover:text-primary"
+                >
+                  <ChevronRight className="h-3.5 w-3.5 text-amber" />
+                  Sample Report
+                </Link>
               </div>
             </div>
           </div>
 
-          <Link to="/sample-report" className={linkClass("/sample-report")}>
-            Sample Report
+          <Link to="/projects" className={linkClass("/projects")}>
+            Projects
           </Link>
           <Link to="/contact" className={linkClass("/contact")}>
             Contact Us
@@ -175,6 +183,12 @@ export function Header() {
               {s.name}
             </Link>
           ))}
+          <Link
+            to="/sample-report"
+            className="rounded-md px-3 py-3 text-base text-foreground/85 transition-colors hover:bg-muted"
+          >
+            Sample Report
+          </Link>
           {navLinks.slice(2).map((l) => (
             <Link
               key={l.to}
