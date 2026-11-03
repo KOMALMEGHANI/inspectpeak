@@ -123,7 +123,7 @@ function ContactPage() {
             description="The essentials about booking and reporting — the full FAQ is on the homepage."
           />
           <div className="mx-auto mt-10 max-w-3xl">
-            <FaqAccordion items={[faqs[3], faqs[6]]} />
+            <FaqAccordion items={[faqs[3]!, faqs[6]!]} />
           </div>
         </div>
       </section>

@@ -46,7 +46,7 @@ function SnaggingInspectionPage() {
         "Structured snag list ready to share with your developer",
       ]}
       note="The best time for a snagging inspection is after finishing work is complete but before you accept possession. Bring your developer's possession notice date into the conversation — we'll help you plan the timing."
-      faqs={[faqs[1], faqs[2], faqs[3], faqs[4], faqs[6]]}
+      faqs={[faqs[1]!, faqs[2]!, faqs[3]!, faqs[4]!, faqs[6]!]}
     />
   );
 }
