@@ -5,7 +5,7 @@ import {
   FileCheck2,
   MapPin,
   ShieldCheck,
-  Warning,
+  AlertTriangle,
 } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -66,7 +66,7 @@ const reportIncludes = [
     text: "Each finding is mapped to the room, wall or element it was recorded on — ready to hand to a contractor.",
   },
   {
-    Icon: Warning,
+    Icon: AlertTriangle,
     title: "Severity level",
     text: "High, moderate or minor — so you know what needs immediate attention and what can wait.",
   },

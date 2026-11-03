@@ -46,7 +46,7 @@ function WaterproofingInspectionPage() {
         "Plumbing-related visible leakage assessment",
       ]}
       note="We assess visible signs of water ingress — stains, dampness, peeling paint, seepage patterns — and document their extent and likely source patterns. Rectification or re-waterproofing work itself is not part of this inspection."
-      faqs={[faqs[0], faqs[2], faqs[3], faqs[6]]}
+      faqs={[faqs[0]!, faqs[2]!, faqs[3]!, faqs[6]!]}
     />
   );
 }

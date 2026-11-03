@@ -46,7 +46,7 @@ function DesignServicesPage() {
         "Building plan and quotation support for approvals and contracting",
       ]}
       note="Design services are provided as a separate practice from inspections and are clearly kept apart. We do not claim laboratory testing or specialised structural testing for design work; documentation is prepared for practical construction and submission use."
-      faqs={[faqs[5], faqs[6]]}
+      faqs={[faqs[5]!, faqs[6]!]}
     />
   );
 }

@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 const quickLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
+  { label: "Projects", to: "/projects" },
   { label: "Sample Report", to: "/sample-report" },
   { label: "Contact Us", to: "/contact" },
   { label: "Privacy Policy", to: "/privacy-policy" },

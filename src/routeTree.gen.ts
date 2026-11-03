@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesignServicesRouteImport } from './routes/design-services'
 import { Route as HomeInspectionRouteImport } from './routes/home-inspection'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SampleReportRouteImport } from './routes/sample-report'
 import { Route as SnaggingInspectionRouteImport } from './routes/snagging-inspection'
 import { Route as StructuralInspectionRouteImport } from './routes/structural-inspection'
@@ -50,6 +51,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SampleReportRoute = SampleReportRouteImport.update({
   id: '/sample-report',
   path: '/sample-report',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/design-services': typeof DesignServicesRoute
   '/home-inspection': typeof HomeInspectionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/projects': typeof ProjectsRoute
   '/sample-report': typeof SampleReportRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/design-services': typeof DesignServicesRoute
   '/home-inspection': typeof HomeInspectionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/projects': typeof ProjectsRoute
   '/sample-report': typeof SampleReportRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/design-services': typeof DesignServicesRoute
   '/home-inspection': typeof HomeInspectionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/projects': typeof ProjectsRoute
   '/sample-report': typeof SampleReportRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/design-services'
     | '/home-inspection'
     | '/privacy-policy'
+    | '/projects'
     | '/sample-report'
     | '/snagging-inspection'
     | '/structural-inspection'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/design-services'
     | '/home-inspection'
     | '/privacy-policy'
+    | '/projects'
     | '/sample-report'
     | '/snagging-inspection'
     | '/structural-inspection'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/design-services'
     | '/home-inspection'
     | '/privacy-policy'
+    | '/projects'
     | '/sample-report'
     | '/snagging-inspection'
     | '/structural-inspection'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   DesignServicesRoute: typeof DesignServicesRoute
   HomeInspectionRoute: typeof HomeInspectionRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProjectsRoute: typeof ProjectsRoute
   SampleReportRoute: typeof SampleReportRoute
   SnaggingInspectionRoute: typeof SnaggingInspectionRoute
   StructuralInspectionRoute: typeof StructuralInspectionRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sample-report': {
       id: '/sample-report'
       path: '/sample-report'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   DesignServicesRoute: DesignServicesRoute,
   HomeInspectionRoute: HomeInspectionRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProjectsRoute: ProjectsRoute,
   SampleReportRoute: SampleReportRoute,
   SnaggingInspectionRoute: SnaggingInspectionRoute,
   StructuralInspectionRoute: StructuralInspectionRoute,

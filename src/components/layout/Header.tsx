@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Sample Report", to: "/sample-report" },
+  { label: "Projects", to: "/projects" },
   { label: "Contact Us", to: "/contact" },
 ] as const;
 
@@ -52,12 +52,13 @@ export function Header() {
     );
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-md transition-shadow",
-        scrolled && "shadow-[0_2px_16px_-6px_oklch(0.25_0.055_265/0.18)]",
-      )}
-    >
+    <>
+      <header
+        className={cn(
+          "sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-md transition-shadow",
+          scrolled && "shadow-[0_2px_16px_-6px_oklch(0.25_0.055_265/0.18)]",
+        )}
+      >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Logo />
 
@@ -114,12 +115,20 @@ export function Header() {
                     {s.name}
                   </Link>
                 ))}
+                <div className="my-1.5 border-t" />
+                <Link
+                  to="/sample-report"
+                  className="flex items-center gap-2 px-4 py-2.5 text-sm text-foreground/85 transition-colors hover:bg-muted hover:text-primary"
+                >
+                  <ChevronRight className="h-3.5 w-3.5 text-amber" />
+                  Sample Report
+                </Link>
               </div>
             </div>
           </div>
 
-          <Link to="/sample-report" className={linkClass("/sample-report")}>
-            Sample Report
+          <Link to="/projects" className={linkClass("/projects")}>
+            Projects
           </Link>
           <Link to="/contact" className={linkClass("/contact")}>
             Contact Us
@@ -145,9 +154,11 @@ export function Header() {
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
+    </header>
 
-      {/* Mobile menu */}
-      <div
+    {/* Mobile menu — a sibling of <header>: the header's backdrop-filter makes
+        it a containing block, which would collapse a fixed child to 1px. */}
+    <div
         className={cn(
           "fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t bg-background transition-all lg:hidden",
           mobileOpen ? "visible opacity-100" : "invisible opacity-0",
@@ -175,6 +186,12 @@ export function Header() {
               {s.name}
             </Link>
           ))}
+          <Link
+            to="/sample-report"
+            className="rounded-md px-3 py-3 text-base text-foreground/85 transition-colors hover:bg-muted"
+          >
+            Sample Report
+          </Link>
           {navLinks.slice(2).map((l) => (
             <Link
               key={l.to}
@@ -194,6 +211,6 @@ export function Header() {
           </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
