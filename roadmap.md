@@ -10,4 +10,4 @@
 - [x] Update contact details everywhere
 - [x] Create missing routes: contact.tsx, sample-report.tsx, privacy-policy.tsx
 - [x] Mount shared Header/Footer in root layout
-- [ ] Nav tabs per user: Home, About Us, Services, Projects, Contact Us — new /projects page, Sample Report inside Services dropdown
+- [x] Nav tabs: Home, About Us, Services, Projects, Contact Us — /projects page live, Sample Report in Services dropdown, mobile menu fixed
