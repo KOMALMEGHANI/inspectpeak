@@ -153,9 +153,11 @@ export function Header() {
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
+    </header>
 
-      {/* Mobile menu */}
-      <div
+    {/* Mobile menu — a sibling of <header>: the header's backdrop-filter makes
+        it a containing block, which would collapse a fixed child to 1px. */}
+    <div
         className={cn(
           "fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t bg-background transition-all lg:hidden",
           mobileOpen ? "visible opacity-100" : "invisible opacity-0",
