@@ -216,7 +216,7 @@ function HomePage() {
               height={1072}
               loading="lazy"
               decoding="async"
-              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
+              className="img-reveal aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
             />
             <div
               aria-hidden="true"

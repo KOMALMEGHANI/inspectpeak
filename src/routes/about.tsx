@@ -136,7 +136,7 @@ function AboutPage() {
               height={1072}
               loading="eager"
               decoding="async"
-              className="aspect-[4/3] w-full object-cover"
+              className="img-reveal aspect-[4/3] w-full object-cover"
             />
           </Reveal>
         </div>
