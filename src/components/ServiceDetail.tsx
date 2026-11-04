@@ -74,7 +74,7 @@ export function ServiceDetail({
               height={800}
               loading="eager"
               decoding="async"
-              className="aspect-[3/2] w-full object-cover"
+              className="img-reveal aspect-[3/2] w-full object-cover"
             />
           </Reveal>
         </div>

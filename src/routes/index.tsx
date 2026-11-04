@@ -171,7 +171,7 @@ function HomePage() {
                 height={1080}
                 decoding="async"
                 fetchPriority="high"
-                className="aspect-[16/11] w-full object-cover"
+                className="img-kenburns aspect-[16/11] w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-navy-deep/90 to-transparent px-5 pb-4 pt-14">
                 <p className="font-mono text-[10px] font-medium uppercase tracking-[0.24em] text-amber sm:text-xs">
