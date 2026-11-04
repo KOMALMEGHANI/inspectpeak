@@ -27,6 +27,12 @@ export const siteConfig = {
   email: "info.inspectpeak@gmail.com",
   address: "Bhopal, Madhya Pradesh",
 
+  // Click-to-action links derived from the confirmed details above.
+  phoneHref: "tel:+917554328447",
+  emailHref: "mailto:info.inspectpeak@gmail.com",
+  mapHref:
+    "https://www.google.com/maps/search/?api=1&query=Bhopal%2C%20Madhya%20Pradesh",
+
   // Service area wording used for local-SEO blocks.
   serviceArea: "Bhopal, Madhya Pradesh",
 
