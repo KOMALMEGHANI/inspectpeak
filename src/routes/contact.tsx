@@ -38,9 +38,27 @@ export const Route = createFileRoute("/contact")({
 });
 
 const contactItems = [
-  { Icon: Phone, label: "Phone", value: siteConfig.phone },
-  { Icon: Mail, label: "Email", value: siteConfig.email },
-  { Icon: MapPin, label: "Location", value: siteConfig.address },
+  {
+    Icon: Phone,
+    label: "Phone",
+    value: siteConfig.phone,
+    href: siteConfig.phoneHref,
+    external: false,
+  },
+  {
+    Icon: Mail,
+    label: "Email",
+    value: siteConfig.email,
+    href: siteConfig.emailHref,
+    external: false,
+  },
+  {
+    Icon: MapPin,
+    label: "Location",
+    value: siteConfig.address,
+    href: siteConfig.mapHref,
+    external: true,
+  },
 ] as const;
 
 function ContactPage() {
