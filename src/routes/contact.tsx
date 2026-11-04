@@ -107,9 +107,15 @@ function ContactPage() {
                     <span className="block font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                       {label}
                     </span>
-                    <span className="mt-1 block text-sm font-semibold text-foreground">
+                    <a
+                      href={href}
+                      {...(external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="mt-1 block text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                    >
                       {value}
-                    </span>
+                    </a>
                   </span>
                 </li>
               ))}
