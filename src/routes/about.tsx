@@ -198,7 +198,7 @@ function AboutPage() {
               height={800}
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover"
+              className="img-reveal h-full w-full object-cover"
             />
             <div className="p-8 lg:p-10">
               <h3 className="text-xl font-bold text-foreground">

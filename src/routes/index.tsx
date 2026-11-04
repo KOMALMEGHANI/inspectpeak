@@ -276,7 +276,7 @@ function HomePage() {
                 height={800}
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="img-reveal absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div className="p-8 lg:p-10">
