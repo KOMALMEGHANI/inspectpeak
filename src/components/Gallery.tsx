@@ -99,7 +99,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
             <img
               src={lightbox.src}
               alt={lightbox.alt}
-              className="max-h-[80vh] w-full object-contain"
+              className="animate-lightbox-in max-h-[80vh] w-full object-contain"
             />
             <div className="flex items-center justify-between bg-card px-4 py-3">
               <p className="text-sm font-semibold text-foreground">

@@ -171,7 +171,7 @@ function HomePage() {
                 height={1080}
                 decoding="async"
                 fetchPriority="high"
-                className="aspect-[16/11] w-full object-cover"
+                className="img-kenburns aspect-[16/11] w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-navy-deep/90 to-transparent px-5 pb-4 pt-14">
                 <p className="font-mono text-[10px] font-medium uppercase tracking-[0.24em] text-amber sm:text-xs">
@@ -216,7 +216,7 @@ function HomePage() {
               height={1072}
               loading="lazy"
               decoding="async"
-              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
+              className="img-reveal aspect-[4/3] w-full rounded-2xl object-cover shadow-lg"
             />
             <div
               aria-hidden="true"
@@ -276,7 +276,7 @@ function HomePage() {
                 height={800}
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="img-reveal absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div className="p-8 lg:p-10">

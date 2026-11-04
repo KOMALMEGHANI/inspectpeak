@@ -160,12 +160,55 @@
   transition-delay: 0.4s;
 }
 
+/* Image animations */
+/* Photos settle from a gentle zoom when their scroll-reveal fires */
+.reveal .img-reveal {
+  transform: scale(1.08);
+  transition: transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.reveal.reveal-visible .img-reveal {
+  transform: scale(1);
+}
+
+/* Hero photo: slow cinematic zoom on load */
+@keyframes ip-kenburns {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.img-kenburns {
+  animation: ip-kenburns 7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* Lightbox photo: fade-and-rise as it opens */
+@keyframes ip-lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-lightbox-in {
+  animation: ip-lightbox-in 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .reveal-stagger > * {
+  .reveal-stagger > *,
+  .reveal .img-reveal {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .img-kenburns,
+  .animate-lightbox-in {
+    animation: none;
   }
 }
 
