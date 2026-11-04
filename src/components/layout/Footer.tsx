@@ -93,15 +93,32 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                <span>{siteConfig.phone}</span>
+                <a
+                  href={siteConfig.phoneHref}
+                  className="transition-colors hover:text-white"
+                >
+                  {siteConfig.phone}
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                <span>{siteConfig.email}</span>
+                <a
+                  href={siteConfig.emailHref}
+                  className="break-all transition-colors hover:text-white"
+                >
+                  {siteConfig.email}
+                </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                <span>{siteConfig.address}</span>
+                <a
+                  href={siteConfig.mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  {siteConfig.address}
+                </a>
               </li>
             </ul>
           </div>

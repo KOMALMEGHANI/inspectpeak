@@ -38,9 +38,27 @@ export const Route = createFileRoute("/contact")({
 });
 
 const contactItems = [
-  { Icon: Phone, label: "Phone", value: siteConfig.phone },
-  { Icon: Mail, label: "Email", value: siteConfig.email },
-  { Icon: MapPin, label: "Location", value: siteConfig.address },
+  {
+    Icon: Phone,
+    label: "Phone",
+    value: siteConfig.phone,
+    href: siteConfig.phoneHref,
+    external: false,
+  },
+  {
+    Icon: Mail,
+    label: "Email",
+    value: siteConfig.email,
+    href: siteConfig.emailHref,
+    external: false,
+  },
+  {
+    Icon: MapPin,
+    label: "Location",
+    value: siteConfig.address,
+    href: siteConfig.mapHref,
+    external: true,
+  },
 ] as const;
 
 function ContactPage() {
@@ -77,7 +95,7 @@ function ContactPage() {
               back.
             </p>
             <ul className="mt-7 space-y-4">
-              {contactItems.map(({ Icon, label, value }) => (
+              {contactItems.map(({ Icon, label, value, href, external }) => (
                 <li
                   key={label}
                   className="flex items-start gap-3.5 rounded-xl border bg-card p-4 shadow-sm"
@@ -89,9 +107,15 @@ function ContactPage() {
                     <span className="block font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                       {label}
                     </span>
-                    <span className="mt-1 block text-sm font-semibold text-foreground">
+                    <a
+                      href={href}
+                      {...(external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="mt-1 block text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                    >
                       {value}
-                    </span>
+                    </a>
                   </span>
                 </li>
               ))}
