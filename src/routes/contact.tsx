@@ -95,7 +95,7 @@ function ContactPage() {
               back.
             </p>
             <ul className="mt-7 space-y-4">
-              {contactItems.map(({ Icon, label, value }) => (
+              {contactItems.map(({ Icon, label, value, href, external }) => (
                 <li
                   key={label}
                   className="flex items-start gap-3.5 rounded-xl border bg-card p-4 shadow-sm"
