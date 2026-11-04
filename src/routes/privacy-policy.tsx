@@ -89,7 +89,14 @@ function PrivacyPolicyPage() {
               >
                 {siteConfig.email}
               </a>{" "}
-              or call {siteConfig.phone}. You can also use our{" "}
+                or call{" "}
+                <a
+                  href={siteConfig.phoneHref}
+                  className="text-primary underline"
+                >
+                  {siteConfig.phone}
+                </a>
+                . You can also use our{" "}
               <Link
                 to="/contact"
                 className="font-semibold text-primary underline underline-offset-2 hover:text-amber"
