@@ -57,8 +57,44 @@ export const Route = createFileRoute("/")({
         content:
           "Identify hidden defects, construction quality issues and structural concerns before they become expensive problems.",
       },
+      {
+        name: "keywords",
+        content:
+          "home inspection, home inspection services in India, home inspection before buying, property inspection, building inspection, house inspection, house inspection services, snagging inspection, structural inspection, pre-purchase home inspection, waterproofing inspection, home inspection Bhopal, property inspection Bhopal, INSPECTPEAK, home inspection Madhya Pradesh, new home inspection, resale property inspection",
+      },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "@id": "https://clearpeak-property-inspections.lovable.app/#business",
+          name: siteConfig.name,
+          slogan: siteConfig.tagline,
+          description: siteConfig.description,
+          url: "https://clearpeak-property-inspections.lovable.app/",
+          telephone: "+917554328447",
+          email: siteConfig.email,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Bhopal",
+            addressRegion: "Madhya Pradesh",
+            addressCountry: "IN",
+          },
+          areaServed: "India",
+          knowsAbout: [
+            "Home inspection",
+            "Pre-purchase home inspection",
+            "Structural inspection",
+            "Waterproofing and leakage inspection",
+            "Snagging inspection",
+          ],
+          priceRange: "₹₹",
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
