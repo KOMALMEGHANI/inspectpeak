@@ -4,6 +4,7 @@ import { getService } from "@/lib/services-data";
 import { faqs } from "@/lib/faqs";
 
 export const Route = createFileRoute("/home-inspection")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {

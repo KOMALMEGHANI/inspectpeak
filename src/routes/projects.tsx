@@ -7,6 +7,7 @@ import { galleryItems } from "@/lib/gallery-data";
 import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/projects")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {

@@ -17,6 +17,7 @@ import { CTASection } from "@/components/CTASection";
 import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/about")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {

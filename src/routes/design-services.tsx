@@ -4,6 +4,7 @@ import { ServiceDetail } from "@/components/ServiceDetail";
 import { getService } from "@/lib/services-data";
 
 export const Route = createFileRoute("/design-services")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {
