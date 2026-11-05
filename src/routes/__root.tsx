@@ -113,6 +113,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.name,
+          url: "https://clearpeak-property-inspections.lovable.app/",
+          description: siteConfig.description,
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
