@@ -17,6 +17,7 @@ import { Route as HomeInspectionRouteImport } from './routes/home-inspection'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SampleReportRouteImport } from './routes/sample-report'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SnaggingInspectionRouteImport } from './routes/snagging-inspection'
 import { Route as StructuralInspectionRouteImport } from './routes/structural-inspection'
 import { Route as WaterproofingInspectionRouteImport } from './routes/waterproofing-inspection'
@@ -61,6 +62,11 @@ const SampleReportRoute = SampleReportRouteImport.update({
   path: '/sample-report',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SnaggingInspectionRoute = SnaggingInspectionRouteImport.update({
   id: '/snagging-inspection',
   path: '/snagging-inspection',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/sample-report': typeof SampleReportRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
   '/waterproofing-inspection': typeof WaterproofingInspectionRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/sample-report': typeof SampleReportRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
   '/waterproofing-inspection': typeof WaterproofingInspectionRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
   '/sample-report': typeof SampleReportRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/snagging-inspection': typeof SnaggingInspectionRoute
   '/structural-inspection': typeof StructuralInspectionRoute
   '/waterproofing-inspection': typeof WaterproofingInspectionRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/projects'
     | '/sample-report'
+    | '/sitemap.xml'
     | '/snagging-inspection'
     | '/structural-inspection'
     | '/waterproofing-inspection'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/projects'
     | '/sample-report'
+    | '/sitemap.xml'
     | '/snagging-inspection'
     | '/structural-inspection'
     | '/waterproofing-inspection'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/projects'
     | '/sample-report'
+    | '/sitemap.xml'
     | '/snagging-inspection'
     | '/structural-inspection'
     | '/waterproofing-inspection'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProjectsRoute: typeof ProjectsRoute
   SampleReportRoute: typeof SampleReportRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SnaggingInspectionRoute: typeof SnaggingInspectionRoute
   StructuralInspectionRoute: typeof StructuralInspectionRoute
   WaterproofingInspectionRoute: typeof WaterproofingInspectionRoute
@@ -231,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SampleReportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/snagging-inspection': {
       id: '/snagging-inspection'
       path: '/snagging-inspection'
@@ -264,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProjectsRoute: ProjectsRoute,
   SampleReportRoute: SampleReportRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SnaggingInspectionRoute: SnaggingInspectionRoute,
   StructuralInspectionRoute: StructuralInspectionRoute,
   WaterproofingInspectionRoute: WaterproofingInspectionRoute,

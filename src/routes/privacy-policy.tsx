@@ -3,6 +3,7 @@ import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/privacy-policy")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {

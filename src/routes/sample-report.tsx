@@ -13,6 +13,7 @@ import { CTASection } from "@/components/CTASection";
 import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/sample-report")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {

@@ -9,6 +9,7 @@ import { faqs } from "@/lib/faqs";
 import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/contact")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       {
