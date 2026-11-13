@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://clearpeak-property-inspections.lovable.app/sitemap.xml
+Sitemap: https://inspectpeak.lovable.app/sitemap.xml

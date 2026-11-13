@@ -3,7 +3,7 @@ import { getRouterInstance } from "@tanstack/react-start";
 import { sitemapStaticPaths, sitemapXML, type SitemapEntry } from "@/lib/sitemap";
 
 // Public site origin — update if the project moves to a custom domain.
-const BASE_URL = "https://clearpeak-property-inspections.lovable.app";
+const BASE_URL = "https://inspectpeak.lovable.app";
 
 export const Route = createFileRoute("/sitemap.xml")({
   staticData: { sitemap: false },

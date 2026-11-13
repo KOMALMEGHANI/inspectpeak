@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: siteConfig.name,
-          url: "https://clearpeak-property-inspections.lovable.app/",
+          url: "https://inspectpeak.lovable.app/",
           description: siteConfig.description,
         }),
       },

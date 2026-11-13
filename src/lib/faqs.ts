@@ -27,4 +27,24 @@ export const faqs: { q: string; a: string }[] = [
     q: "How can I book an inspection?",
     a: "Fill in the enquiry form on our Contact page or tap the WhatsApp button. Share your property location, type and preferred inspection date, and our team will confirm the slot and scope with you.",
   },
+  {
+    q: "How much does a home inspection cost?",
+    a: "The fee depends on the type of inspection, the property type and its area. Share these details through the enquiry form or by phone and we will give you a clear quote before booking — there are no hidden charges added after the visit.",
+  },
+  {
+    q: "How long does a home inspection take?",
+    a: "It depends on the size, type and condition of the property and the inspection scope. We confirm the expected time on site with you when we schedule the visit, so you can plan to be present or arrange access.",
+  },
+  {
+    q: "Should I be present during the inspection?",
+    a: "We recommend it. Being on site lets you see observations first-hand and ask questions. If you cannot attend, a family member or your agent can provide access, and every finding is still documented with photographs in the report.",
+  },
+  {
+    q: "What information do I need to share when booking?",
+    a: "Your name and phone number, the property location, property type (flat, villa, independent house, etc.), approximate area, the service you need and your preferred inspection date. Any specific concerns — such as a seepage patch or cracks — help us prepare.",
+  },
+  {
+    q: "What happens after I receive the report?",
+    a: "Use the report to discuss repairs with the builder or seller, negotiate the price, or plan maintenance. Each observation includes a recommended next step, and we are happy to clarify any finding over a call.",
+  },
 ];
