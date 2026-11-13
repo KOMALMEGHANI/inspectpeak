@@ -69,12 +69,24 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "@id": "https://clearpeak-property-inspections.lovable.app/#business",
+          "@id": "https://inspectpeak.lovable.app/#business",
           name: siteConfig.name,
           slogan: siteConfig.tagline,
           description: siteConfig.description,
-          url: "https://clearpeak-property-inspections.lovable.app/",
+          url: "https://inspectpeak.lovable.app/",
           telephone: "+917554328447",
           email: siteConfig.email,
           address: {
