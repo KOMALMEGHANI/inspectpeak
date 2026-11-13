@@ -10,6 +10,7 @@ const quickLinks = [
   { label: "Projects", to: "/projects" },
   { label: "Sample Report", to: "/sample-report" },
   { label: "Contact Us", to: "/contact" },
+  { label: "Feedback", to: "/feedback" },
   { label: "Privacy Policy", to: "/privacy-policy" },
 ] as const;
 
