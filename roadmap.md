@@ -7,4 +7,4 @@
 - [x] Mount shared Header/Footer in root layout
 - [x] Nav tabs: Home, About Us, Services, Projects, Contact Us — /projects page live, Sample Report in Services dropdown, mobile menu fixed
 - [x] Verify: build clean, routing test passes, desktop + mobile click-through in browser
-- [ ] Add FAQ answers (inspection, report, booking) + FAQPage structured data
+- [x] Add FAQ answers (inspection, report, booking) + FAQPage structured data
