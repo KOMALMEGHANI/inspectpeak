@@ -18,6 +18,7 @@ const navLinks = [
   { label: "About Us", to: "/about" },
   { label: "Projects", to: "/projects" },
   { label: "Contact Us", to: "/contact" },
+  { label: "Feedback", to: "/feedback" },
 ] as const;
 
 export function Header() {
@@ -132,6 +133,9 @@ export function Header() {
           </Link>
           <Link to="/contact" className={linkClass("/contact")}>
             Contact Us
+          </Link>
+          <Link to="/feedback" className={linkClass("/feedback")}>
+            Feedback
           </Link>
         </nav>
 

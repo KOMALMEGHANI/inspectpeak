@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DesignServicesRouteImport } from './routes/design-services'
+import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as HomeInspectionRouteImport } from './routes/home-inspection'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -40,6 +41,11 @@ const ContactRoute = ContactRouteImport.update({
 const DesignServicesRoute = DesignServicesRouteImport.update({
   id: '/design-services',
   path: '/design-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeInspectionRoute = HomeInspectionRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/design-services': typeof DesignServicesRoute
+  '/feedback': typeof FeedbackRoute
   '/home-inspection': typeof HomeInspectionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/design-services': typeof DesignServicesRoute
+  '/feedback': typeof FeedbackRoute
   '/home-inspection': typeof HomeInspectionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/design-services': typeof DesignServicesRoute
+  '/feedback': typeof FeedbackRoute
   '/home-inspection': typeof HomeInspectionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/projects': typeof ProjectsRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/design-services'
+    | '/feedback'
     | '/home-inspection'
     | '/privacy-policy'
     | '/projects'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/design-services'
+    | '/feedback'
     | '/home-inspection'
     | '/privacy-policy'
     | '/projects'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/design-services'
+    | '/feedback'
     | '/home-inspection'
     | '/privacy-policy'
     | '/projects'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   DesignServicesRoute: typeof DesignServicesRoute
+  FeedbackRoute: typeof FeedbackRoute
   HomeInspectionRoute: typeof HomeInspectionRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/design-services'
       fullPath: '/design-services'
       preLoaderRoute: typeof DesignServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/home-inspection': {
@@ -280,6 +300,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   DesignServicesRoute: DesignServicesRoute,
+  FeedbackRoute: FeedbackRoute,
   HomeInspectionRoute: HomeInspectionRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProjectsRoute: ProjectsRoute,

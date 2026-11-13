@@ -121,6 +121,25 @@ function ContactPage() {
                 </li>
               ))}
             </ul>
+            <a
+              href={siteConfig.mapHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${siteConfig.address} in Google Maps`}
+              className="group mt-5 block overflow-hidden rounded-md border bg-muted"
+            >
+              <iframe
+                title={`Map of ${siteConfig.address}`}
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(siteConfig.address)}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="pointer-events-none h-48 w-full border-0"
+              />
+              <span className="flex items-center justify-between border-t bg-card px-4 py-3 text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
+                <span>{siteConfig.address}</span>
+                <span aria-hidden="true">Open map ↗</span>
+              </span>
+            </a>
             <div className="mt-8 rounded-xl border-l-4 border-amber bg-amber-soft/50 p-5">
               <p className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-primary/70">
                 {siteConfig.tagline}

@@ -18,3 +18,4 @@
 
 - Brand colors come from the client's IP-monogram logo: charcoal `#151E25`, brand red `#C50502`, silver grey, white. In `src/styles.css` the `navy` tokens hold the charcoal and the `amber` tokens hold the brand red (names kept for class stability).
 - The logo asset is CDN-hosted via `src/assets/inspectpeak-logo.png.asset.json`; on dark backgrounds it sits on a white chip (see `Logo.tsx` variant="light"). Favicon is `public/favicon.png`.
+- Visitor feedback must be submitted through a server-validated action into private storage; never display unmoderated submissions publicly.
