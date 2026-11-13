@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      client_feedback: {
+        Row: {
+          created_at: string
+          customer_name: string
+          email: string | null
+          feedback: string
+          id: string
+          rating: number
+          service: string | null
+        }
+        Insert: {
+          created_at?: string
+          customer_name: string
+          email?: string | null
+          feedback: string
+          id?: string
+          rating: number
+          service?: string | null
+        }
+        Update: {
+          created_at?: string
+          customer_name?: string
+          email?: string | null
+          feedback?: string
+          id?: string
+          rating?: number
+          service?: string | null
+        }
+        Relationships: []
+      }
       contact_enquiries: {
         Row: {
           additional_details: string | null
