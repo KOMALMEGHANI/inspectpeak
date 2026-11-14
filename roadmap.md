@@ -11,4 +11,5 @@
 - [ ] Add private customer feedback form and feedback navigation
 - [ ] Add clickable Bhopal map preview
 - [ ] Check and report booking/feedback email delivery readiness
+- [ ] Ensure browser tab and shared link previews use the INSPECTPEAK logo instead of Lovable branding
 - [ ] Verify routes, forms, map link, tests, and preview build
