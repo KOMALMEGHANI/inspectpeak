@@ -50,7 +50,10 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${siteConfig.name} — Home Inspection Services in Bhopal & Indore` },
+      {
+        name: "twitter:title",
+        content: `${siteConfig.name} — Home Inspection Services in Bhopal & Indore`,
+      },
       {
         name: "twitter:description",
         content:
