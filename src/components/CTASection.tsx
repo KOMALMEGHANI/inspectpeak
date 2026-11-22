@@ -27,12 +27,8 @@ export function CTASection({
   return (
     <section className={cn("px-4 sm:px-6 lg:px-8", className)}>
       <Reveal className="blueprint-grid mx-auto max-w-7xl rounded-2xl bg-navy px-6 py-14 text-center sm:px-12">
-        <h2 className="mx-auto max-w-2xl text-3xl font-bold text-white sm:text-4xl">
-          {title}
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base text-white/70">
-          {description}
-        </p>
+        <h2 className="mx-auto max-w-2xl text-3xl font-bold text-white sm:text-4xl">{title}</h2>
+        <p className="mx-auto mt-4 max-w-xl text-base text-white/70">{description}</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button variant="accent" size="lg" asChild>
             <Link to={primaryTo}>

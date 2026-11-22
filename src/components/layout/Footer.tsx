@@ -29,9 +29,8 @@ export function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
-              Professional property inspection and building assessment services
-              across India — helping homebuyers, homeowners and investors make
-              informed decisions.
+              Professional property inspection and building assessment services across India —
+              helping homebuyers, homeowners and investors make informed decisions.
             </p>
             <div className="mt-5 flex gap-3">
               {socials
@@ -94,10 +93,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                <a
-                  href={siteConfig.phoneHref}
-                  className="transition-colors hover:text-white"
-                >
+                <a href={siteConfig.phoneHref} className="transition-colors hover:text-white">
                   {siteConfig.phone}
                 </a>
               </li>
@@ -112,14 +108,28 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                <a
-                  href={siteConfig.mapHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  {siteConfig.address}
-                </a>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-white">Bhopal &amp; Indore, Madhya Pradesh</span>
+                  <div className="flex gap-2 text-xs">
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Bhopal%2C%20Madhya%20Pradesh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 underline hover:text-white"
+                    >
+                      Bhopal Map ↗
+                    </a>
+                    <span className="text-white/40">·</span>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Indore%2C%20Madhya%20Pradesh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/60 underline hover:text-white"
+                    >
+                      Indore Map ↗
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -127,12 +137,9 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {siteConfig.legalName}. All rights
-            reserved.
+            © {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
           </p>
-          <p className="font-mono uppercase tracking-[0.2em]">
-            {siteConfig.tagline}
-          </p>
+          <p className="font-mono uppercase tracking-[0.2em]">{siteConfig.tagline}</p>
         </div>
       </div>
     </footer>

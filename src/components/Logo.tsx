@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logoPng from "@/assets/inspectpeak-logo.png";
 import logoAsset from "@/assets/inspectpeak-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 
@@ -17,10 +18,7 @@ export function Logo({ variant = "dark", className }: LogoProps) {
   return (
     <Link
       to="/"
-      className={cn(
-        "group inline-flex items-center gap-2.5",
-        className,
-      )}
+      className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label="INSPECTPEAK — home"
     >
       <span
@@ -30,7 +28,7 @@ export function Logo({ variant = "dark", className }: LogoProps) {
         )}
       >
         <img
-          src={logoAsset.url}
+          src={logoPng || logoAsset.url}
           alt="INSPECTPEAK logo"
           className="h-full w-full object-contain"
         />

@@ -47,7 +47,7 @@ function StructuralInspectionPage() {
         "Concrete and construction workmanship assessment",
       ]}
       note="This is a visual engineering assessment, not a laboratory or non-destructive testing service. Where findings suggest deeper investigation is warranted, the report will say so clearly — with recommended next steps."
-      faqs={[faqs[0]!, faqs[3]!, faqs[4]!, faqs[6]!]}
+      faqs={[faqs[0]!, faqs[1]!, faqs[3]!, faqs[4]!]}
     />
   );
 }

@@ -1,26 +1,18 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Reveal } from "@/components/Reveal";
 
 export function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   return (
     <Reveal className="mx-auto max-w-3xl">
-      <Accordion type="single" collapsible className="w-full">
-        {items.map((item, i) => (
-          <AccordionItem key={item.q} value={`item-${i}`}>
-            <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:text-primary hover:no-underline">
+      <div className="space-y-8 sm:space-y-10">
+        {items.map((item) => (
+          <div key={item.q} className="group">
+            <h3 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
               {item.q}
-            </AccordionTrigger>
-            <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-              {item.a}
-            </AccordionContent>
-          </AccordionItem>
+            </h3>
+            <p className="mt-2.5 text-base leading-relaxed text-muted-foreground">{item.a}</p>
+          </div>
         ))}
-      </Accordion>
+      </div>
     </Reveal>
   );
 }

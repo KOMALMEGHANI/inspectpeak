@@ -63,9 +63,7 @@ export function ContactForm({ preselectedService, className }: ContactFormProps)
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [result, setResult] = useState<{ success: boolean; message: string } | null>(
-    null,
-  );
+  const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
 
   const set = (key: keyof FormState, value: string) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -109,8 +107,7 @@ export function ContactForm({ preselectedService, className }: ContactFormProps)
     } catch {
       setResult({
         success: false,
-        message:
-          "Sorry — your enquiry could not be sent right now. Please try again in a moment.",
+        message: "Sorry — your enquiry could not be sent right now. Please try again in a moment.",
       });
     } finally {
       setSubmitting(false);
@@ -173,7 +170,7 @@ export function ContactForm({ preselectedService, className }: ContactFormProps)
             id="propertyLocation"
             value={form.propertyLocation}
             onChange={(e) => set("propertyLocation", e.target.value)}
-            placeholder="City / area of the property"
+            placeholder="Property location (e.g. Bhopal / Indore)"
             maxLength={160}
             className={fieldClass}
           />
@@ -183,10 +180,7 @@ export function ContactForm({ preselectedService, className }: ContactFormProps)
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="propertyType">Property Type</Label>
-          <Select
-            value={form.propertyType}
-            onValueChange={(v) => set("propertyType", v)}
-          >
+          <Select value={form.propertyType} onValueChange={(v) => set("propertyType", v)}>
             <SelectTrigger id="propertyType" className={cn(fieldClass, "w-full")}>
               <SelectValue placeholder="Select property type" />
             </SelectTrigger>
@@ -215,10 +209,7 @@ export function ContactForm({ preselectedService, className }: ContactFormProps)
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="requiredService">Required Service *</Label>
-          <Select
-            value={form.requiredService}
-            onValueChange={(v) => set("requiredService", v)}
-          >
+          <Select value={form.requiredService} onValueChange={(v) => set("requiredService", v)}>
             <SelectTrigger
               id="requiredService"
               className={cn(fieldClass, "w-full")}
@@ -234,9 +225,7 @@ export function ContactForm({ preselectedService, className }: ContactFormProps)
               ))}
             </SelectContent>
           </Select>
-          {errors.requiredService && (
-            <p className={errorClass}>{errors.requiredService}</p>
-          )}
+          {errors.requiredService && <p className={errorClass}>{errors.requiredService}</p>}
         </div>
         <div>
           <Label htmlFor="preferredDate">Preferred Inspection Date</Label>

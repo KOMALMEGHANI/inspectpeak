@@ -10,10 +10,7 @@ const enquirySchema = z.object({
   phone: z
     .string()
     .trim()
-    .regex(
-      /^[+]?[\d\s()-]{8,16}$/,
-      "Please enter a valid phone number.",
-    ),
+    .regex(/^[+]?[\d\s()-]{8,16}$/, "Please enter a valid phone number."),
   email: z
     .string()
     .trim()
@@ -24,11 +21,7 @@ const enquirySchema = z.object({
   propertyLocation: z.string().trim().max(160).optional().or(z.literal("")),
   propertyType: z.string().trim().max(80).optional().or(z.literal("")),
   propertyArea: z.string().trim().max(80).optional().or(z.literal("")),
-  requiredService: z
-    .string()
-    .trim()
-    .min(1, "Please select a service.")
-    .max(80),
+  requiredService: z.string().trim().min(1, "Please select a service.").max(80),
   preferredDate: z
     .string()
     .trim()
@@ -46,7 +39,7 @@ const enquirySchema = z.object({
 export type EnquiryInput = z.infer<typeof enquirySchema>;
 
 export const submitEnquiry = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => {
+  .validator((data: unknown) => {
     const parsed = enquirySchema.safeParse(data);
     if (!parsed.success) {
       const fieldErrors: Record<string, string> = {};
@@ -63,22 +56,18 @@ export const submitEnquiry = createServerFn({ method: "POST" })
   })
   .handler(async ({ data }) => {
     try {
-      const { supabaseAdmin } = await import(
-        "@/integrations/supabase/client.server"
-      );
-      const { error } = await supabaseAdmin
-        .from("contact_enquiries")
-        .insert({
-          full_name: data.fullName,
-          phone: data.phone,
-          email: data.email || null,
-          property_location: data.propertyLocation || null,
-          property_type: data.propertyType || null,
-          property_area: data.propertyArea || null,
-          required_service: data.requiredService,
-          preferred_date: data.preferredDate || null,
-          additional_details: data.additionalDetails || null,
-        });
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { error } = await supabaseAdmin.from("contact_enquiries").insert({
+        full_name: data.fullName,
+        phone: data.phone,
+        email: data.email || null,
+        property_location: data.propertyLocation || null,
+        property_type: data.propertyType || null,
+        property_area: data.propertyArea || null,
+        required_service: data.requiredService,
+        preferred_date: data.preferredDate || null,
+        additional_details: data.additionalDetails || null,
+      });
 
       if (error) {
         console.error("[enquiry] insert failed:", error.message);
@@ -98,8 +87,7 @@ export const submitEnquiry = createServerFn({ method: "POST" })
       console.error("[enquiry] unexpected error:", err);
       return {
         success: false as const,
-        message:
-          "Sorry — something went wrong on our side. Please try again in a moment.",
+        message: "Sorry — something went wrong on our side. Please try again in a moment.",
       };
     }
   });

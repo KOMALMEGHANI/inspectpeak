@@ -1,5 +1,6 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
+@source "./";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -108,94 +109,98 @@
   }
 }
 
-/* Scroll-reveal animation */
+/* Scroll-reveal animation: crisp, modern, hardware-accelerated (60fps) */
 @keyframes ip-fade-up {
   from {
     opacity: 0;
-    transform: translateY(26px);
+    transform: translate3d(0, 16px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translate3d(0, 16px, 0);
   transition:
-    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal.reveal-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .reveal-stagger > * {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translate3d(0, 14px, 0);
   transition:
-    opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+    opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-stagger.reveal-visible > * {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .reveal-stagger.reveal-visible > *:nth-child(2) {
-  transition-delay: 0.1s;
+  transition-delay: 0.05s;
 }
 .reveal-stagger.reveal-visible > *:nth-child(3) {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 .reveal-stagger.reveal-visible > *:nth-child(4) {
-  transition-delay: 0.3s;
+  transition-delay: 0.15s;
 }
 .reveal-stagger.reveal-visible > *:nth-child(5) {
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
 }
 
-/* Image animations */
-/* Photos settle from a gentle zoom when their scroll-reveal fires */
+/* Image animations: swift, smooth GPU-accelerated settle without continuous lag */
 .reveal .img-reveal {
-  transform: scale(1.08);
-  transition: transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 .reveal.reveal-visible .img-reveal {
   transform: scale(1);
 }
 
-/* Hero photo: slow cinematic zoom on load */
-@keyframes ip-kenburns {
+/* Hero photo: gentle one-shot entrance instead of continuous 7s GPU loop */
+@keyframes ip-hero-in {
   from {
-    transform: scale(1.1);
+    opacity: 0.9;
+    transform: scale(1.03);
   }
   to {
+    opacity: 1;
     transform: scale(1);
   }
 }
 .img-kenburns {
-  animation: ip-kenburns 7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: ip-hero-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
 }
 
 /* Lightbox photo: fade-and-rise as it opens */
 @keyframes ip-lightbox-in {
   from {
     opacity: 0;
-    transform: scale(0.94) translateY(10px);
+    transform: scale(0.96) translate3d(0, 8px, 0);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 .animate-lightbox-in {
-  animation: ip-lightbox-in 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: ip-lightbox-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

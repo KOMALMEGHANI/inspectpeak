@@ -75,9 +75,7 @@ function PrivacyPolicyPage() {
           {sections.map((s) => (
             <Reveal key={s.title}>
               <h2 className="text-xl font-bold text-foreground">{s.title}</h2>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
-                {s.body}
-              </p>
+              <p className="mt-3 leading-relaxed text-muted-foreground">{s.body}</p>
             </Reveal>
           ))}
           <Reveal>
@@ -90,14 +88,11 @@ function PrivacyPolicyPage() {
               >
                 {siteConfig.email}
               </a>{" "}
-                or call{" "}
-                <a
-                  href={siteConfig.phoneHref}
-                  className="text-primary underline"
-                >
-                  {siteConfig.phone}
-                </a>
-                . You can also use our{" "}
+              or call{" "}
+              <a href={siteConfig.phoneHref} className="text-primary underline">
+                {siteConfig.phone}
+              </a>
+              . You can also use our{" "}
               <Link
                 to="/contact"
                 className="font-semibold text-primary underline underline-offset-2 hover:text-amber"

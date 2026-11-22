@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Info } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -20,12 +20,7 @@ type ServiceDetailProps = {
 };
 
 /** Shared layout for the five service detail pages. */
-export function ServiceDetail({
-  service,
-  highlights,
-  faqs,
-  note,
-}: ServiceDetailProps) {
+export function ServiceDetail({ service, highlights, faqs, note }: ServiceDetailProps) {
   return (
     <>
       {/* Hero */}
@@ -38,9 +33,7 @@ export function ServiceDetail({
             <h1 className="mt-3 text-4xl font-bold leading-tight text-white sm:text-5xl">
               {service.name}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
-              {service.intro}
-            </p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{service.intro}</p>
             <ul className="mt-7 space-y-2.5">
               {highlights.map((h) => (
                 <li key={h} className="flex items-start gap-2.5 text-white/85">
@@ -99,59 +92,25 @@ export function ServiceDetail({
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="text-sm font-semibold text-foreground sm:text-base">
-                    {item}
-                  </h3>
+                  <h3 className="text-sm font-semibold text-foreground sm:text-base">{item}</h3>
                 </div>
               </div>
             ))}
           </Reveal>
-
-          <Reveal className="mt-8 rounded-xl border border-amber/40 bg-amber-soft p-6">
-            <div className="flex items-start gap-3">
-              <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              <div>
-                <h3 className="text-sm font-bold text-foreground">
-                  What you receive
-                </h3>
-                <p className="mt-1 text-sm leading-relaxed text-foreground/80">
-                  {service.outcome}
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          {note && (
-            <Reveal className="mt-6 rounded-xl border bg-muted p-6">
-              <div className="flex items-start gap-3">
-                <Info className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {note}
-                </p>
-              </div>
-            </Reveal>
-          )}
         </div>
       </section>
 
       {/* Process */}
-      <section
-        className={cn(
-          "px-4 py-20 sm:px-6 lg:px-8",
-          service.category === "design"
-            ? "bg-background"
-            : "blueprint-grid bg-navy-deep",
-        )}
-      >
+      <section className="blueprint-grid bg-navy-deep px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             kicker="Our Process"
             title="Four Steps, One Clear Outcome"
-            dark={service.category !== "design"}
+            dark
             description="A consistent, documented process from your first enquiry to the final report."
           />
           <div className="mt-12">
-            <ProcessSteps dark={service.category !== "design"} />
+            <ProcessSteps dark />
           </div>
         </div>
       </section>
@@ -160,10 +119,7 @@ export function ServiceDetail({
       {faqs && faqs.length > 0 && (
         <section className="px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading
-              kicker="Common Questions"
-              title="Frequently Asked Questions"
-            />
+            <SectionHeading kicker="Common Questions" title="Frequently Asked Questions" />
             <div className="mt-10">
               <FaqAccordion items={faqs} />
             </div>

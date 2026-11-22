@@ -50,8 +50,8 @@ const workAreas = [
     text: "Tile levelling, joint quality and workmanship checks before handover.",
   },
   {
-    title: "Drawings & documentation",
-    text: "Structural drawings review and design documentation for residential projects.",
+    title: "Electrical & utilities",
+    text: "Switchboard checks, wiring safety, earthing and plumbing fixture inspections.",
   },
 ] as const;
 
@@ -69,9 +69,8 @@ function ProjectsPage() {
               Our Work, Documented
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
-              Inspection contexts from our site visits across{" "}
-              {siteConfig.serviceArea} — cracks, moisture, finishing quality,
-              drawings and buildings in progress.
+              Inspection contexts from our site visits across {siteConfig.serviceArea} — cracks,
+              moisture, finishing quality, drawings and buildings in progress.
             </p>
           </Reveal>
         </div>
@@ -82,16 +81,9 @@ function ProjectsPage() {
         <div className="mx-auto max-w-7xl">
           <Reveal className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {workAreas.map(({ title, text }) => (
-              <div
-                key={title}
-                className="card-top-rule rounded-xl border bg-card p-6 shadow-sm"
-              >
-                <h3 className="text-sm font-bold leading-snug text-foreground">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {text}
-                </p>
+              <div key={title} className="card-top-rule rounded-xl border bg-card p-6 shadow-sm">
+                <h3 className="text-sm font-bold leading-snug text-foreground">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
               </div>
             ))}
           </Reveal>

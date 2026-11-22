@@ -2,7 +2,6 @@ import homeImg from "@/assets/service-home.jpg";
 import structuralImg from "@/assets/service-structural.jpg";
 import waterproofingImg from "@/assets/service-waterproofing.jpg";
 import snaggingImg from "@/assets/service-snagging.jpg";
-import designImg from "@/assets/service-design.jpg";
 
 export type InspectionService = {
   slug: string;
@@ -96,32 +95,11 @@ export const services: InspectionService[] = [
     outcome:
       "A structured snag list with location references and photographs, ready to share with your developer for rectification.",
   },
-  {
-    slug: "/design-services",
-    name: "Architectural & Structural Design",
-    shortName: "Design Services",
-    category: "design",
-    image: designImg,
-    imageAlt:
-      "Architectural floor plans and structural drawings with CAD drafting software on a laptop",
-    intro:
-      "Design and drafting support for new builds and renovations — plans, structural drawings and documentation prepared to support approvals and quoting.",
-    scope: [
-      "Architectural planning",
-      "Structural design and drawings",
-      "AutoCAD drafting",
-      "Building plan and quotation support",
-    ],
-    outcome:
-      "Clear, buildable drawings and documentation you can take to contractors and approving authorities.",
-  },
 ];
 
-export const inspectionServices = services.filter(
-  (s) => s.category === "inspection",
-);
+export const inspectionServices = services;
 
-export const designServices = services.filter((s) => s.category === "design");
+export const designServices: InspectionService[] = [];
 
 export function getService(slug: string) {
   return services.find((s) => s.slug === slug);
@@ -136,7 +114,6 @@ export const serviceOptions = [
     label: "Waterproofing & Leakage Inspection",
   },
   { value: "snagging-inspection", label: "Finishing & Snagging Inspection" },
-  { value: "design-services", label: "Architectural & Structural Design" },
   { value: "sample-report", label: "Sample Report Request" },
   { value: "other", label: "Other / Not sure yet" },
 ];

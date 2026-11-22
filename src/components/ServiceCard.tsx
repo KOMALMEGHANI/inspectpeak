@@ -30,22 +30,17 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
       </Link>
       <div className="flex flex-1 flex-col p-6">
         <p className="font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-primary/60">
-          {service.category === "design" ? "Design Service" : "Inspection Service"}
+          Inspection Service
         </p>
         <h3 className="mt-2 text-xl font-bold text-foreground">
           <Link to={service.slug} className="transition-colors hover:text-primary">
             {service.name}
           </Link>
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-          {service.intro}
-        </p>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{service.intro}</p>
         <ul className="mt-4 space-y-1.5">
           {service.scope.slice(0, 3).map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-2 text-sm text-foreground/80"
-            >
+            <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
               <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber" />
               {item}
             </li>

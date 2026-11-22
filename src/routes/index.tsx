@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-inspection.jpg";
 import aboutImg from "@/assets/about-team.jpg";
-import designImg from "@/assets/service-design.jpg";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -22,7 +21,7 @@ import { ProcessSteps } from "@/components/ProcessSteps";
 import { Gallery } from "@/components/Gallery";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CTASection } from "@/components/CTASection";
-import { inspectionServices, designServices } from "@/lib/services-data";
+import { inspectionServices } from "@/lib/services-data";
 import { galleryItems } from "@/lib/gallery-data";
 import { faqs } from "@/lib/faqs";
 import { siteConfig } from "@/lib/site-config";
@@ -32,35 +31,35 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: `${siteConfig.name} — Home Inspection Services in India | Buy Your Dream Home with Confidence`,
+        title: `${siteConfig.name} — Home Inspection Services in Bhopal & Indore | Buy Your Dream Home with Confidence`,
       },
       {
         name: "description",
         content:
-          "Professional home inspection services in India. Pre-purchase home inspection, structural inspection, waterproofing & leakage checks and snagging inspection before buying — clear reports, engineering-led assessments.",
+          "Professional home inspection services in Bhopal & Indore, Madhya Pradesh. Pre-purchase home inspection, structural inspection, waterproofing & leakage checks and snagging inspection before buying — clear reports, engineering-led assessments.",
       },
       {
         property: "og:title",
-        content: `${siteConfig.name} — Home Inspection Services in India`,
+        content: `${siteConfig.name} — Home Inspection Services in Bhopal & Indore`,
       },
       {
         property: "og:description",
         content:
-          "Identify hidden defects, construction quality issues and structural concerns before they become expensive problems.",
+          "Identify hidden defects, construction quality issues and structural concerns before they become expensive problems in Bhopal & Indore.",
       },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${siteConfig.name} — Home Inspection Services in India` },
+      { name: "twitter:title", content: `${siteConfig.name} — Home Inspection Services in Bhopal & Indore` },
       {
         name: "twitter:description",
         content:
-          "Identify hidden defects, construction quality issues and structural concerns before they become expensive problems.",
+          "Identify hidden defects, construction quality issues and structural concerns before they become expensive problems in Bhopal & Indore.",
       },
       {
         name: "keywords",
         content:
-          "home inspection, home inspection services in India, home inspection before buying, property inspection, building inspection, house inspection, house inspection services, snagging inspection, structural inspection, pre-purchase home inspection, waterproofing inspection, home inspection Bhopal, property inspection Bhopal, INSPECTPEAK, home inspection Madhya Pradesh, new home inspection, resale property inspection",
+          "home inspection, home inspection services in India, home inspection before buying, property inspection Bhopal, property inspection Indore, home inspection Bhopal, home inspection Indore, building inspection Bhopal, building inspection Indore, house inspection services, snagging inspection Bhopal, snagging inspection Indore, structural inspection, pre-purchase home inspection, waterproofing inspection, INSPECTPEAK, home inspection Madhya Pradesh, new home inspection, resale property inspection",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -89,13 +88,21 @@ export const Route = createFileRoute("/")({
           url: "https://inspectpeak.lovable.app/",
           telephone: "+917554328447",
           email: siteConfig.email,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Bhopal",
-            addressRegion: "Madhya Pradesh",
-            addressCountry: "IN",
-          },
-          areaServed: "India",
+          address: [
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Bhopal",
+              addressRegion: "Madhya Pradesh",
+              addressCountry: "IN",
+            },
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Indore",
+              addressRegion: "Madhya Pradesh",
+              addressCountry: "IN",
+            },
+          ],
+          areaServed: ["Bhopal", "Indore", "Madhya Pradesh"],
           knowsAbout: [
             "Home inspection",
             "Pre-purchase home inspection",
@@ -164,8 +171,6 @@ const mockSeverity = [
 ] as const;
 
 function HomePage() {
-  const design = designServices[0]!;
-
   return (
     <>
       {/* ============ Hero ============ */}
@@ -186,8 +191,8 @@ function HomePage() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              We help you identify hidden defects, construction quality issues and
-              potential structural concerns before they become expensive problems.
+              We help you identify hidden defects, construction quality issues and potential
+              structural concerns before they become expensive problems.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button variant="accent" size="lg" asChild>
@@ -201,9 +206,7 @@ function HomePage() {
                 size="lg"
                 className="border-primary/30"
                 onClick={() =>
-                  document
-                    .getElementById("services")
-                    ?.scrollIntoView({ behavior: "smooth" })
+                  document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
                 }
               >
                 Explore Our Services
@@ -243,12 +246,8 @@ function HomePage() {
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-soft text-primary">
                 <Icon className="h-5 w-5" />
               </span>
-              <h2 className="mt-3 text-sm font-bold text-foreground sm:text-base">
-                {title}
-              </h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                {text}
-              </p>
+              <h2 className="mt-3 text-sm font-bold text-foreground sm:text-base">{title}</h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{text}</p>
             </div>
           ))}
         </Reveal>
@@ -280,16 +279,14 @@ function HomePage() {
               An inspection brand built on engineering discipline
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              INSPECTPEAK is a professional property inspection and building
-              assessment brand focused on helping homebuyers, homeowners and
-              property investors make informed decisions. We assess what can be
-              seen, measured and documented — and we tell you exactly what we
-              found.
+              INSPECTPEAK is a professional property inspection and building assessment brand
+              focused on helping homebuyers, homeowners and property investors make informed
+              decisions. We assess what can be seen, measured and documented — and we tell you
+              exactly what we found.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Our commitment is simple: quality in every check, transparency in
-              every finding, obsessive attention to detail, and reporting you can
-              act on with confidence.
+              Our commitment is simple: quality in every check, transparency in every finding,
+              obsessive attention to detail, and reporting you can act on with confidence.
             </p>
             <Button variant="link" asChild className="mt-4 h-auto p-0 text-primary">
               <Link to="/about">
@@ -313,49 +310,6 @@ function HomePage() {
             {inspectionServices.map((s) => (
               <ServiceCard key={s.slug} service={s} />
             ))}
-          </Reveal>
-
-          {/* Design services — clearly separated */}
-          <Reveal className="mt-12 overflow-hidden rounded-2xl border bg-card shadow-sm lg:grid lg:grid-cols-2">
-            <div className="relative min-h-56">
-              <img
-                src={design.image}
-                alt={design.imageAlt}
-                width={1200}
-                height={800}
-                loading="lazy"
-                decoding="async"
-                className="img-reveal absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-            <div className="p-8 lg:p-10">
-              <p className="font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-primary/60">
-                Design Service — separate from inspections
-              </p>
-              <h3 className="mt-2 text-2xl font-bold text-foreground">
-                {design.name}
-              </h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
-                {design.intro}
-              </p>
-              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-                {design.scope.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 text-sm text-foreground/80"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Button variant="secondary" asChild className="mt-6">
-                <Link to={design.slug}>
-                  Explore Design Services
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
           </Reveal>
         </div>
       </section>
@@ -386,10 +340,10 @@ function HomePage() {
               Know exactly what your report will look like
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              Every INSPECTPEAK inspection ends with a written report: organised
-              observations with photographs, severity levels and recommended next
-              steps. Preview a professionally designed sample before you book —
-              all example findings are clearly labelled as illustrative samples.
+              Every INSPECTPEAK inspection ends with a written report: organised observations with
+              photographs, severity levels and recommended next steps. Preview a professionally
+              designed sample before you book — all example findings are clearly labelled as
+              illustrative samples.
             </p>
             <Button variant="accent" size="lg" asChild className="mt-7">
               <Link to="/sample-report">
@@ -434,9 +388,7 @@ function HomePage() {
                     className="flex items-start gap-2.5 rounded-lg border bg-background p-3"
                   >
                     <Eye className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/60" />
-                    <p className="text-xs leading-relaxed text-foreground/80">
-                      {obs}
-                    </p>
+                    <p className="text-xs leading-relaxed text-foreground/80">{obs}</p>
                   </div>
                 ))}
               </div>
@@ -465,12 +417,8 @@ function HomePage() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-soft text-primary">
                   <Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-3 text-sm font-bold leading-snug text-foreground">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {text}
-                </p>
+                <h3 className="mt-3 text-sm font-bold leading-snug text-foreground">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
               </div>
             ))}
           </Reveal>
@@ -496,10 +444,10 @@ function HomePage() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             kicker="FAQ"
-            title="Frequently Asked Questions"
-            description="The questions homebuyers ask us most — answered plainly."
+            title="Good questions. Clear answers."
+            description="The questions homebuyers and homeowners ask us most — answered plainly."
           />
-          <div className="mt-10">
+          <div className="mt-12">
             <FaqAccordion items={faqs} />
           </div>
         </div>

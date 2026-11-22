@@ -17,7 +17,7 @@ export const Route = createFileRoute("/feedback")({
       {
         name: "description",
         content:
-          "Share private feedback about your INSPECTPEAK home or building inspection experience in Bhopal.",
+          "Share private feedback about your INSPECTPEAK home or building inspection experience in Bhopal & Indore, Madhya Pradesh.",
       },
       { property: "og:title", content: "Client Feedback | INSPECTPEAK" },
       {
@@ -97,12 +97,10 @@ function FeedbackPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <Reveal>
             <MessageSquareText className="h-8 w-8 text-primary" />
-            <h2 className="mt-5 text-2xl font-bold text-foreground">
-              Your feedback matters
-            </h2>
+            <h2 className="mt-5 text-2xl font-bold text-foreground">Your feedback matters</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Share what went well or what we could improve. Feedback is kept
-              private and will not appear publicly without review and approval.
+              Share what went well or what we could improve. Feedback is kept private and will not
+              appear publicly without review and approval.
             </p>
           </Reveal>
 
@@ -122,9 +120,7 @@ function FeedbackPage() {
               </div>
 
               <fieldset>
-                <legend className="text-sm font-medium leading-none">
-                  Your Rating *
-                </legend>
+                <legend className="text-sm font-medium leading-none">Your Rating *</legend>
                 <div className="mt-2 flex gap-2" role="group" aria-label="Rating">
                   {[1, 2, 3, 4, 5].map((value) => (
                     <Button
@@ -136,10 +132,7 @@ function FeedbackPage() {
                       aria-pressed={rating === value}
                       onClick={() => setRating(value)}
                     >
-                      <Star
-                        className="h-4 w-4"
-                        fill={rating >= value ? "currentColor" : "none"}
-                      />
+                      <Star className="h-4 w-4" fill={rating >= value ? "currentColor" : "none"} />
                     </Button>
                   ))}
                 </div>
@@ -201,9 +194,7 @@ function FeedbackPage() {
                   role="status"
                   aria-live="polite"
                   className={
-                    result.success
-                      ? "text-sm text-foreground"
-                      : "text-sm text-destructive"
+                    result.success ? "text-sm text-foreground" : "text-sm text-destructive"
                   }
                 >
                   {result.message}

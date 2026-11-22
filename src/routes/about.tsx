@@ -101,16 +101,15 @@ function AboutPage() {
               Every Detail. Inspected.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">
-              {siteConfig.name} is a professional property inspection and building
-              assessment brand focused on helping homebuyers, homeowners and
-              property investors make informed decisions.
+              {siteConfig.name} is a professional property inspection and building assessment brand
+              focused on helping homebuyers, homeowners and property investors make informed
+              decisions.
             </p>
             <p className="mt-4 max-w-xl leading-relaxed text-white/60">
-              A home purchase involves lakhs of rupees and years of your life. Yet
-              most buyers see a property only once or twice before committing. We
-              bridge that gap with a structured, engineering-led inspection that
-              documents the property's visible condition — clearly, honestly and
-              photographically.
+              A home purchase involves lakhs of rupees and years of your life. Yet most buyers see a
+              property only once or twice before committing. We bridge that gap with a structured,
+              engineering-led inspection that documents the property's visible condition — clearly,
+              honestly and photographically.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button variant="accent" size="lg" asChild>
@@ -129,7 +128,10 @@ function AboutPage() {
               </Button>
             </div>
           </Reveal>
-          <Reveal delay={100} className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+          <Reveal
+            delay={100}
+            className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
+          >
             <img
               src={aboutImg}
               alt="INSPECTPEAK engineers reviewing structural drawings at a project site office"
@@ -146,10 +148,7 @@ function AboutPage() {
       {/* Our approach */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            kicker="Our Commitment"
-            title="What We Hold Every Inspection To"
-          />
+          <SectionHeading kicker="Our Commitment" title="What We Hold Every Inspection To" />
           <Reveal className="reveal-stagger mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {commitments.map(({ Icon, title, text }) => (
               <div
@@ -160,9 +159,7 @@ function AboutPage() {
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-3 text-base font-bold text-foreground">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {text}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
               </div>
             ))}
           </Reveal>
@@ -184,9 +181,7 @@ function AboutPage() {
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-4 text-lg font-bold text-foreground">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {text}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
               </div>
             ))}
           </Reveal>
@@ -202,16 +197,13 @@ function AboutPage() {
               className="img-reveal h-full w-full object-cover"
             />
             <div className="p-8 lg:p-10">
-              <h3 className="text-xl font-bold text-foreground">
-                How we work on site
-              </h3>
+              <h3 className="text-xl font-bold text-foreground">How we work on site</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                Inspections are performed in person, at the property, by our
-                inspection team. We follow a fixed scope for the service you book,
-                photograph every observation, and grade each finding by severity.
-                What we observe and report is limited to what can be seen and
-                documented on site — we do not claim laboratory testing or
-                specialised structural testing.
+                Inspections are performed in person, at the property, by our inspection team. We
+                follow a fixed scope for the service you book, photograph every observation, and
+                grade each finding by severity. What we observe and report is limited to what can be
+                seen and documented on site — we do not claim laboratory testing or specialised
+                structural testing.
               </p>
               <Button variant="link" asChild className="mt-4 h-auto p-0 text-primary">
                 <Link to="/sample-report">

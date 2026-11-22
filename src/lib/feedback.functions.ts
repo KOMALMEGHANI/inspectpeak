@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { feedbackSchema } from "@/lib/feedback-schema";
 
 export const submitFeedback = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => {
+  .validator((input: unknown) => {
     const parsed = feedbackSchema.safeParse(input);
     if (!parsed.success) {
       throw Object.assign(new Error("Please check your feedback details."), {
@@ -13,9 +13,7 @@ export const submitFeedback = createServerFn({ method: "POST" })
   })
   .handler(async ({ data }) => {
     try {
-      const { supabaseAdmin } = await import(
-        "@/integrations/supabase/client.server"
-      );
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
       const { error } = await supabaseAdmin.from("client_feedback").insert({
         customer_name: data.customerName,
         rating: data.rating,
@@ -34,8 +32,7 @@ export const submitFeedback = createServerFn({ method: "POST" })
 
       return {
         success: true as const,
-        message:
-          "Thank you for sharing your feedback. It has been received privately for review.",
+        message: "Thank you for sharing your feedback. It has been received privately for review.",
       };
     } catch (error) {
       console.error("[feedback] unexpected error:", error);
