@@ -18,6 +18,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ProcessSteps } from "@/components/ProcessSteps";
+import { PricingSection } from "@/components/PricingSection";
 import { Gallery } from "@/components/Gallery";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CTASection } from "@/components/CTASection";
@@ -331,6 +332,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ Pricing & Packages ============ */}
+      <PricingSection className="bg-muted/40" />
 
       {/* ============ Sample report teaser ============ */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
