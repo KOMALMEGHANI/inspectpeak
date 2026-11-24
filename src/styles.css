@@ -203,6 +203,35 @@
   animation: ip-lightbox-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Floating badge animations on hero */
+@keyframes ip-float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes ip-float-reverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+.animate-float-slow {
+  animation: ip-float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: ip-float-reverse 4.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-stagger > *,
@@ -212,7 +241,9 @@
     transition: none;
   }
   .img-kenburns,
-  .animate-lightbox-in {
+  .animate-lightbox-in,
+  .animate-float-slow,
+  .animate-float-reverse {
     animation: none;
   }
 }

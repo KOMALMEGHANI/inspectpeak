@@ -219,7 +219,13 @@ function HomePage() {
           </Reveal>
 
           <Reveal delay={120} className="relative">
-            <div className="relative overflow-hidden rounded-2xl border shadow-[0_24px_60px_-24px_oklch(0.25_0.055_265/0.4)]">
+            {/* Ambient background glow */}
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-primary/15 via-amber/15 to-transparent blur-2xl opacity-70"
+            />
+
+            <div className="group relative overflow-hidden rounded-2xl border shadow-[0_24px_60px_-24px_oklch(0.25_0.055_265/0.4)]">
               <img
                 src={heroImg}
                 alt="Professional engineer inspecting the facade of a modern Indian residential property"
@@ -227,19 +233,46 @@ function HomePage() {
                 height={1080}
                 decoding="async"
                 fetchPriority="high"
-                className="img-kenburns aspect-[16/11] w-full object-cover"
+                className="img-kenburns aspect-[16/11] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-navy-deep/90 to-transparent px-5 pb-4 pt-14">
                 <p className="font-mono text-[10px] font-medium uppercase tracking-[0.24em] text-amber sm:text-xs">
                   {siteConfig.tagline}
                 </p>
+                <span className="font-mono text-[10px] font-semibold text-white/80">
+                  Bhopal &amp; Indore
+                </span>
               </div>
             </div>
-            {/* amber corner accent */}
+
+            {/* Amber corner accent */}
             <div
               aria-hidden="true"
               className="absolute -left-3 -top-3 h-20 w-20 rounded-tl-2xl border-l-4 border-t-4 border-amber"
             />
+
+            {/* Floating Trust Badge 1 (Top-Right) */}
+            <div className="animate-float-slow absolute -right-3 -top-5 z-20 hidden items-center gap-2.5 rounded-full border border-white/20 bg-navy/90 px-4 py-2 shadow-xl backdrop-blur-md sm:flex">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                <ShieldCheck className="h-3.5 w-3.5" />
+              </span>
+              <span className="font-mono text-xs font-bold tracking-wide text-white">
+                100% Engineering-Led
+              </span>
+            </div>
+
+            {/* Floating Trust Badge 2 (Bottom-Left) */}
+            <div className="animate-float-reverse absolute -bottom-5 -left-3 z-20 hidden items-center gap-2.5 rounded-2xl border border-white/20 bg-background/95 px-4 py-2.5 shadow-xl backdrop-blur-md sm:flex">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-soft text-xs font-bold text-primary">
+                250+
+              </span>
+              <div className="text-left">
+                <p className="text-xs font-bold leading-tight text-foreground">Inspection Points</p>
+                <p className="font-mono text-[10px] text-muted-foreground">
+                  Structural · Waterproofing · Civil
+                </p>
+              </div>
+            </div>
           </Reveal>
         </div>
 

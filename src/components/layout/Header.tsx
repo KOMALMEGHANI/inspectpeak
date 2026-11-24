@@ -178,6 +178,13 @@ export function Header() {
               </div>
             </div>
 
+            <Link to="/pricing" className={getTabClass(isTabActive("/pricing"))}>
+              {isTabActive("/pricing") && (
+                <span className="h-1.5 w-1.5 rounded-full bg-amber shrink-0 animate-pulse" />
+              )}
+              <span>Pricing</span>
+            </Link>
+
             <Link to="/projects" className={getTabClass(isTabActive("/projects"))}>
               {isTabActive("/projects") && (
                 <span className="h-1.5 w-1.5 rounded-full bg-amber shrink-0 animate-pulse" />
@@ -236,6 +243,7 @@ export function Header() {
               <Link
                 key={l.to}
                 to={l.to}
+                onClick={() => setMobileOpen(false)}
                 className={cn(
                   "flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold transition-all duration-200 active:scale-98",
                   active
@@ -264,6 +272,7 @@ export function Header() {
                   <Link
                     key={s.slug}
                     to={s.slug}
+                    onClick={() => setMobileOpen(false)}
                     className={cn(
                       "flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-200 active:scale-98",
                       active
@@ -281,6 +290,7 @@ export function Header() {
               })}
               <Link
                 to="/sample-report"
+                onClick={() => setMobileOpen(false)}
                 className={cn(
                   "flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-200 active:scale-98",
                   location.pathname === "/sample-report"
@@ -306,6 +316,7 @@ export function Header() {
                 <Link
                   key={l.to}
                   to={l.to}
+                  onClick={() => setMobileOpen(false)}
                   className={cn(
                     "flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold transition-all duration-200 active:scale-98",
                     active
@@ -326,7 +337,7 @@ export function Header() {
 
           <div className="mt-4 px-1 pb-6">
             <Button variant="accent" className="w-full h-11 text-base shadow-md rounded-xl" asChild>
-              <Link to="/contact">
+              <Link to="/contact" onClick={() => setMobileOpen(false)}>
                 <ClipboardCheck className="h-4 w-4 mr-1.5" />
                 Book Inspection
               </Link>
