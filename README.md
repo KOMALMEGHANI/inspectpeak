@@ -1,8 +1,24 @@
-# Inspectpeak
+# 🏢 INSPECTPEAK — Home & Building Inspection Services
 
-Create a premium, modern, professional and fully responsive website for INSPECTPEAK, a home inspection and building inspection company in India.
+> **🌐 Live Website Link:** [https://inspectpeak001.vercel.app](https://inspectpeak001.vercel.app)  
+> **📍 Service Locations:** Bhopal & Indore, Madhya Pradesh  
+> **📞 Contact:** +91 755 4328447 | info.inspectpeak@gmail.com  
+> **🏷️ Brand Tagline:** *“Every Detail. Inspected.”*
 
-IMPORTANT: Use my existing INSPECTPEAK logo that I have already provided/uploaded. Do not create a new logo. Use the logo's existing brand colors to define the website's color palette. Brand tagline: “Every Detail. Inspected.”
+---
+
+## 🚀 Live Demo & Quick Links
+- **Live Website:** [https://inspectpeak001.vercel.app](https://inspectpeak001.vercel.app)
+- **Pricing & Packages:** [https://inspectpeak001.vercel.app/pricing](https://inspectpeak001.vercel.app/pricing)
+- **Services:** [https://inspectpeak001.vercel.app/services](https://inspectpeak001.vercel.app/services)
+- **Book Inspection / Contact:** [https://inspectpeak001.vercel.app/contact](https://inspectpeak001.vercel.app/contact)
+
+---
+
+## 📌 Project Overview
+Create a premium, modern, professional and fully responsive website for **INSPECTPEAK**, a home inspection and building inspection company serving Bhopal and Indore, Madhya Pradesh.
+
+Brand Colors: Charcoal (`#151E25`), Brand Red (`#C50502`), Silver Grey, White.
 
 1. Website Design
 
